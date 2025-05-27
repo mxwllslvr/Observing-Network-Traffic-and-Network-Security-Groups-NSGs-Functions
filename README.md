@@ -140,7 +140,20 @@ Wireshark displays encrypted SSH packets, confirming a secure connection between
 In PowerShell, type exit to terminate the session, observing the “Connection to 10.0.0.5 closed” message.</p>
 <br/><br/>
 
-
-<p><img width="850" alt="image" src=""/></p>
-<p></p>
+<p><img width="850" alt="image" src="https://github.com/user-attachments/assets/31eaf6dc-c55f-4a9d-93b7-3293803c161a"/></p>
+<h4>Capture DHCP Traffic:</h4>
+<br/>
+<p>In Wireshark, enter dhcp in the filter bar and start a new capture.
 <br/><br/>
+In PowerShell, run ipconfig /renew to request an IP lease. Note limited traffic due to the VM’s static IP configuration.
+<br/><br/>
+To trigger DHCP activity, create a batch file. Open notepad on Windows-VM and enter:
+
+```yaml
+
+ipconfig /release
+ipconfig /renew
+
+```
+
+Press windows + E to access explorer, and navigate to C:\ folder. Click view, make sure Hidden Items is checked. Refresh folder and save the notepad file as dhcp.bat in the newly accessible C:\ProgramData.
