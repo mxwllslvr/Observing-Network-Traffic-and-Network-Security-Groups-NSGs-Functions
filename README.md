@@ -45,7 +45,7 @@ In this project, we will observe various network traffic to and from Azure Virtu
 
 <p>Access Azure Portal: Log into your Azure account and navigate to the Virtual Machines section. 
 <br/><br/>
-Start VMs: Select both windows-vm and linux-vm by checking their boxes, then click Start. Confirm the action when prompted. Note the Public IP address of windows-vm for later use.
+Start VMs: Select both Windows-VM and Linux-VM by checking their boxes, then click Start. Confirm the action when prompted. Note the Public IP address of Windows-VM for later use.
 <br/><br/>
 Verify VM Status: After a few minutes, confirm both VMs are running by checking their status in the portal. Minimize the Azure window for now.</p>
 
@@ -54,12 +54,12 @@ Verify VM Status: After a few minutes, confirm both VMs are running by checking 
 <p><img width="850" alt="NSG3" src="https://github.com/user-attachments/assets/c8acef54-83c0-4944-93cf-67d34692bdc0"/></p>
 <p>Initiate RDP Connection: On your local Windows device, open the Run dialog (Windows + R) and type mstsc to launch the Remote Desktop Connection client. Alternatively, search for Remote Desktop Connection in the Start menu.
 <br>
-Configure RDP Settings: In the Remote Desktop Connection window, enter the windows-vm Public IP address in the Computer field. Click "show options" and enter the username established when provisioning the VM. Click connect, then enter the password we used with that username when the window pops up. Press "Ok" and establish the connection.</p>
+Configure RDP Settings: In the Remote Desktop Connection window, enter the Windows-VM Public IP address in the Computer field. Click show options and enter the username established when provisioning the VM. Click connect, then enter the password we used with that username when the window pops up. Press Ok and establish the connection.</p>
 
 <br/><br/>
 
 <p><img width="850" alt="NSG3" src="https://github.com/user-attachments/assets/bfa3401b-48d7-493c-af56-fe6fc63941d0"/></p>
-<p>Install Wireshark: On windows-vm, launch the Microsoft Edge browser and visit wireshark.org. Download the Windows x64 Installer. Locate the installer in the Downloads folder, run it, and follow the prompts, clicking Next and Finish to complete installation.
+<p>Install Wireshark: On Windows-VM, launch the Microsoft Edge browser and visit wireshark.org. Download the Windows x64 Installer. Locate the installer in the Downloads folder, run it, and follow the prompts, clicking Next and Finish to complete the installation.
 <br>
 Observation: You are now connected to windows-vm via RDP using mstsc, with Wireshark installed, enabling detailed network traffic analysis.</p>
 
@@ -71,7 +71,7 @@ Observation: You are now connected to windows-vm via RDP using mstsc, with Wires
 <br/><br/>
 
 <p><img width="850" alt="NSG2" src="https://github.com/user-attachments/assets/e0508be1-88c5-4256-b156-bb6032bfa200"/></p>
-<p>Inspect Initial Traffic: Review the packet list in Wireshark, which displaicmpys all active network communications.</p>
+<p>Inspect Initial Traffic: Review the packet list in Wireshark, which displays all active network communications.</p>
 <br/><br/>
 
 <p><img width="850" alt="NSG3" src="https://github.com/user-attachments/assets/4afaef41-ae58-4505-93e4-b6f26aad3e0d"/></p>
