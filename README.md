@@ -156,4 +156,41 @@ ipconfig /renew
 
 ```
 
-Press Windows + E to access Explorer, and navigate to C:\ folder. Click View, make sure Hidden Items is checked. Refresh the folder and save the Notepad file as dhcp.bat in the newly accessible C:\ProgramData.
+Press Windows + E to access Explorer, and navigate to C:\ folder. Click View, make sure Hidden Items is checked. Refresh the folder and save the Notepad file as dhcp.bat in the newly accessible C:\ProgramData.</p>
+<br/><br/>
+
+<p><img width="850" alt="image" src="https://github.com/user-attachments/assets/9b56eafc-7928-4d6c-a81f-2ba439d0a883"/></p>
+<br/>
+<p>In PowerShell, navigate with cd C:\ProgramData, list files with ls, and execute the batch file with .\dhcp.bat.
+<br/><br/>
+Observe a brief disconnection during ipconfig /release, followed by reconnection via ipconfig /renew. Wireshark captures DHCP packets (e.g., Discover, Offer, Request, ACK).
+<br/><br/>
+Observation: SSH traffic reveals encrypted communication, while the batch file generates observable DHCP lease negotiations, demonstrating IP assignment dynamics.
+<br/><br/><br/>
+
+<p><img width="850" alt="image" src="https://github.com/user-attachments/assets/3cc852e6-364b-45da-8fce-a14d27ab5f12"/></p>
+<h3>Step 5: Evaluating DNS and RDP Traffic</h3>
+<h4>Capture DNS Traffic</h4>
+<br/>
+In Wireshark, enter dns in the filter bar and start a new capture.
+<br/><br/>
+In PowerShell, execute nslookup disney.com to resolve Disney’s IP address (e.g., 130.211.198.204).
+<br/><br/>
+In Edge, navigate to the IP address. Note a Disney-related page (e.g., with a logo or error), indicating restricted access but confirming DNS’s role in mapping domain names to IPs, rarely enabling direct IP-based website access.
+<br/><br/>
+
+<p><img width="850" alt="image" src="https://github.com/user-attachments/assets/c7178afb-b78e-4513-9daf-135555d42705"/></p>
+<h4>Capture RDP Traffic:</h4>
+<br/>
+In Wireshark, enter tcp.port == 3389 in the filter bar to isolate RDP traffic, then start a new capture.
+<br/><br/>
+Observe ongoing packet flow, reflecting the active RDP session to Windows-VM maintained throughout the exercise.
+<br/><br/>
+Alternatively, filter with rdp to view similar traffic, verifying the protocol’s continuous network activity during remote access.
+<br/><br/>
+Observation: DNS traffic illustrates domain-to-IP resolution, while RDP traffic highlights the persistent network activity of remote connections, evident since the session’s start.
+<br/><br/><br/>
+
+Conclusion
+
+This procedure successfully connected to windows-vm via RDP using mstsc, installed Wireshark, and analyzed ICMP, SSH, DHCP, DNS, and RDP traffic using Wireshark and PowerShell. By implementing an NSG rule to block ICMP traffic, we demonstrated fundamental cybersecurity principles, observing the immediate effects of firewall policies. This exercise underscores the capabilities of network analysis tools and Azure’s security infrastructure. To manage costs, stop both VMs in Azure when idle. This concludes the procedure, equipping you with essential skills for network monitoring and security configuration.
