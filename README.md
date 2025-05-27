@@ -191,6 +191,9 @@ Alternatively, filter with rdp to view similar traffic, verifying the protocol�
 Observation: DNS traffic illustrates domain-to-IP resolution, while RDP traffic highlights the persistent network activity of remote connections, evident since the session’s start.
 <br/><br/><br/>
 
-Conclusion
+<img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%">
+<h2>Conclusion</h2>
 
 This procedure successfully connected to windows-vm via RDP using mstsc, installed Wireshark, and analyzed ICMP, SSH, DHCP, DNS, and RDP traffic using Wireshark and PowerShell. By implementing an NSG rule to block ICMP traffic, we demonstrated fundamental cybersecurity principles, observing the immediate effects of firewall policies. This exercise underscores the capabilities of network analysis tools and Azure’s security infrastructure. To manage costs, stop both VMs in Azure when idle. This concludes the procedure, equipping you with essential skills for network monitoring and security configuration.
+<br/><br/>
+<img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%">
