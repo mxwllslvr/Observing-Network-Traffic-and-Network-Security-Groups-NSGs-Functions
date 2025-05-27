@@ -23,7 +23,7 @@ In this project, we will observe various network traffic to and from Azure Virtu
 
 <h2>Operating Systems</h2>
 
-- macOS Sequoia
+- Windows 11 Home 24H2
 - Windows 10 (22H2)
 - Ubuntu Server 20.04 LTS
 
@@ -66,4 +66,6 @@ In this project, we will observe various network traffic to and from Azure Virtu
   
   Observation: You are now connected to windows-vm via RDP using mstsc, with Wireshark installed, enabling detailed network traffic analysis.
 </p>
+
+
 
