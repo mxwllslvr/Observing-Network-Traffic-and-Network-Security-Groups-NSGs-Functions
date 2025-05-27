@@ -52,22 +52,22 @@ Verify VM Status: After a few minutes, confirm both VMs are running by checking 
 <br/><br/>
 
 <p><img width="850" alt="NSG3" src="https://github.com/user-attachments/assets/c8acef54-83c0-4944-93cf-67d34692bdc0"/></p>
-<p>Initiate RDP Connection: On your local Windows device, open the Run dialog (Windows + R) and type mstsc to launch the Remote Desktop Connection client. Alternatively, search for Remote Desktop Connection in the Start menu.
-<br>
+<p>Initiate RDP Connection: Open the Run dialog (Windows + R) on your local Windows device and type mstsc to launch the Remote Desktop Connection client. Alternatively, you can search for Remote Desktop Connection in the Start menu.
+<br/><br/>
 Configure RDP Settings: In the Remote Desktop Connection window, enter the Windows-VM Public IP address in the Computer field. Click show options and enter the username established when provisioning the VM. Click connect, then enter the password we used with that username when the window pops up. Press Ok and establish the connection.</p>
 
 <br/><br/>
 
 <p><img width="850" alt="NSG3" src="https://github.com/user-attachments/assets/bfa3401b-48d7-493c-af56-fe6fc63941d0"/></p>
 <p>Install Wireshark: On Windows-VM, launch the Microsoft Edge browser and visit wireshark.org. Download the Windows x64 Installer. Locate the installer in the Downloads folder, run it, and follow the prompts, clicking Next and Finish to complete the installation.
-<br>
-Observation: You are now connected to windows-vm via RDP using mstsc, with Wireshark installed, enabling detailed network traffic analysis.</p>
+<br/><br/>
+Observation: You are now connected to Windows-VM via RDP using mstsc, with Wireshark installed, enabling detailed network traffic analysis.</p>
 
 <br/><br/><br/>
 
 <h3>Step 2: Examining ICMP Traffic</h3>
 <p><img width="850" alt="NSG2" src="https://github.com/user-attachments/assets/b26dafaf-ecff-44fd-b32f-009bdf300a07"/></p>
-<p>Start Wireshark: Open Wireshark on windows-vm. Select the Ethernet interface and click the shark fin icon to initiate packet capture.</p>
+<p>Start Wireshark: Open Wireshark on Windows-VM. Select the Ethernet interface and click the shark fin icon to initiate packet capture.</p>
 <br/><br/>
 
 <p><img width="850" alt="NSG2" src="https://github.com/user-attachments/assets/e0508be1-88c5-4256-b156-bb6032bfa200"/></p>
@@ -78,3 +78,11 @@ Observation: You are now connected to windows-vm via RDP using mstsc, with Wires
 <p>Filter for ICMP: Enter icmp in Wireshark’s filter bar and press Enter to focus on ICMP (Internet Control Message Protocol) traffic.</p>
 <br/><br/>
 
+<p><img width="850" alt="NSG3" src="https://github.com/user-attachments/assets/7d776972-3021-41cf-9a66-66797134c7e0"/></p>
+<p>Retrieve Linux VM Private IP: In the Azure Portal, select Linux VM, go to Networking, and note the Private IP address (e.g., 10.0.0.5). Minimize Azure.</p>
+<br/><br/>
+
+<p><img width="850" alt="NSG3" src="https://github.com/user-attachments/assets/99b934b4-0d80-4de2-a8ac-1da1838b0738"/></p>
+<p>Execute Ping: On Windows-VM, open PowerShell via the Start menu search. Run ping 10.0.0.5 to send ICMP Echo Requests to the Linux VM.
+Review Results: With the ICMP filter active, Wireshark shows packets from Windows-VM (e.g., 10.0.0.4) to Linux-VM (10.0.0.5) with corresponding replies. PowerShell displays successful ping responses.</p>
+<br/><br/>
