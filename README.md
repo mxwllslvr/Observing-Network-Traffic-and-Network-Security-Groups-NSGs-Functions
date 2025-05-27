@@ -77,3 +77,4 @@ Observation: You are now connected to windows-vm via RDP using mstsc, with Wires
 <p><img width="850" alt="NSG3" src="https://github.com/user-attachments/assets/4afaef41-ae58-4505-93e4-b6f26aad3e0d"/></p>
 <p>Filter for ICMP: Enter icmp in Wireshark’s filter bar and press Enter to focus on ICMP (Internet Control Message Protocol) traffic.</p>
 <br/><br/>
+
