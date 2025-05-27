@@ -105,7 +105,13 @@ Observation: Wireshark and PowerShell confirm robust ICMP connectivity between V
 <br/> &nbsp;&nbsp;&nbsp;&nbsp;  -Action: Deny
 <br/> &nbsp;&nbsp;&nbsp;&nbsp;  -Priority: 290 (to prioritize this rule)
 <br/> &nbsp;&nbsp;&nbsp;&nbsp;  -Click Add.</p>
+<br/><br/>
 
+<p><img width="850" alt="NSG3" src="https://github.com/user-attachments/assets/0ade2ac7-8802-414c-9c54-7475ca72a4d1"/></p>
+<p>Confirm Rule: Verify the new rule appears at the top of the inbound rules list.</p>
+<br/><br/>
 
-
+<p><img width="850" alt="NSG3" src="https://github.com/user-attachments/assets/8c4f914e-54ce-404e-a8da-dfcf592b674c"/></p>
+<p>Observe Ping Disruption: Return to windows-vm. In PowerShell, note the perpetual ping (ping 10.0.0.5 -t) now reports “Request timed out”. Wireshark marks the timestamp when ICMP replies stop, reflecting the NSG rule’s effect.</p>
+<br/><br/>
 
