@@ -15,8 +15,7 @@ In this project, we will observe various network traffic to and from Azure Virtu
 <h2>Technologies Utilized</h2>
 
 - Microsoft Azure (Compute/Virtual Machines)
-- Remote Desktop Protocol (RDP)
-- Windows App (macOS)
+- Remote Desktop Protocol (RDP) via mstsc
 - PowerShell
 - Network Protocols (ICMP, SSH, DHCP, DNS, RDP)
 - Wireshark (Network Protocol Analyzer)
@@ -29,15 +28,15 @@ In this project, we will observe various network traffic to and from Azure Virtu
 
 <h2>Procedure Overview</h2>
 
-- Step 1: Establish RDP Connection to VM and Install Wireshark
-- Step 2: Analyze ICMP Traffic
-- Step 3: Configure NSG to Block Ping Requests
-- Step 4: Examine SSH and DHCP Traffic
-- Step 5: Investigate DNS and RDP Traffic
+- Step 1: Connect to VM via RDP Using mstsc and Install Wireshark
+- Step 2: Examine ICMP Traffic
+- Step 3: Apply NSG Rule to Block Ping Requests
+- Step 4: Analyze SSH and DHCP Traffic
+- Step 5: Evaluate DNS and RDP Traffic
 
 <br/><br/>
 
-<h3>Step 1: Establishing RDP Connection to VM and Installing Wireshark</h3>
+<h3>Step 1: Connect to VM via RDP Using mstsc and Install Wireshark</h3>
 
 <p><img width="850" alt="image" src="https://github.com/user-attachments/assets/93594b30-b3d3-484d-babf-a49c7efce3a9"/>
 <br/><br/>
@@ -62,7 +61,7 @@ Configure RDP Settings: In the Remote Desktop Connection window, enter the Windo
 Observation: You are now connected to Windows-VM via RDP using mstsc, with Wireshark installed, enabling detailed network traffic analysis.</p>
 <br/><br/><br/>
 
-<h3>Step 2: Examining ICMP Traffic</h3>
+<h3>Step 2: Examine ICMP Traffic</h3>
 <p><img width="850" alt="image" src="https://github.com/user-attachments/assets/b26dafaf-ecff-44fd-b32f-009bdf300a07"/></p>
 <p>Start Wireshark: Open Wireshark on Windows-VM. Select the Ethernet interface and click the shark fin icon to initiate packet capture.</p>
 <br/><br/>
@@ -91,7 +90,7 @@ Review Results: With the ICMP filter active, Wireshark shows packets from Window
 Observation: Wireshark and PowerShell confirm robust ICMP connectivity between VMs, with continuous request-reply packets during the perpetual ping.</p>
 <br/><br/><br/>
 
-<h3>Step 3: Applying NSG Rule to Block Ping Requests</h3>
+<h3>Step 3: Apply NSG Rule to Block Ping Requests</h3>
 <p><img width="850" alt="image" src="https://github.com/user-attachments/assets/6a17758a-b938-4f90-93ae-2916ef132e2f"/></p>
 <p>Navigate to NSG: In the Azure Portal, go to Virtual Machines, select Linux-VM, and access Networking. Click the Linux-VM-NSG link under Network Security Group.</p>
 <br/><br/>
@@ -126,7 +125,7 @@ Observation: The NSG rule successfully blocked ICMP traffic, interrupting pings,
 </p>
 <br/><br/><br/>
 
-<h3>Step 4: Analyzing SSH and DHCP Traffic</h3>
+<h3>Step 4: Analyze SSH and DHCP Traffic</h3>
 
 <p><img width="850" alt="image" src="https://github.com/user-attachments/assets/99457421-b701-4209-b961-1cb4bec4e8ac"/></p>
 <h4>Capture SSH Traffic:</h4>
@@ -169,7 +168,7 @@ Observation: SSH traffic reveals encrypted communication, while the batch file g
 <br/><br/><br/>
 
 <p><img width="850" alt="image" src="https://github.com/user-attachments/assets/3cc852e6-364b-45da-8fce-a14d27ab5f12"/></p>
-<h3>Step 5: Evaluating DNS and RDP Traffic</h3>
+<h3>Step 5: Evaluate DNS and RDP Traffic</h3>
 <h4>Capture DNS Traffic</h4>
 <br/>
 In Wireshark, enter dns in the filter bar and start a new capture.
