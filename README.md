@@ -120,13 +120,25 @@ Observation: Wireshark and PowerShell confirm robust ICMP connectivity between V
 <br/><br/>
 
 <p><img width="850" alt="image" src="https://github.com/user-attachments/assets/21574ba9-f455-4c11-8d4f-13d7f2b165c9"/></p>
-<p>Verify Ping Restoration: On windows-vm, confirm in PowerShell that ping replies resume (e.g., “Reply from 10.0.0.5”). Wireshark displays ICMP request-reply packets again. Terminate the perpetual ping with Ctrl + C in PowerShell.</p>
+<p>Verify Ping Restoration: On windows-vm, confirm in PowerShell that ping replies resume (e.g., “Reply from 10.0.0.5”). Wireshark displays ICMP request-reply packets again. Terminate the perpetual ping with Ctrl + C in PowerShell.
 <br/><br/>
+Observation: The NSG rule successfully blocked ICMP traffic, interrupting pings, and its removal restored connectivity, illustrating NSG’s firewall capabilities.
+</p>
+<br/><br/><br/>
 
-<p><img width="850" alt="image" src=""/></p>
-<p></p>
+<h3>Step 4: Analyzing SSH and DHCP Traffic</h3>
+
+<p><img width="850" alt="image" src="https://github.com/user-attachments/assets/99457421-b701-4209-b961-1cb4bec4e8ac"/></p>
+<h4>Capture SSH Traffic:</h4>
+<br/>
+<p>In Wireshark, enter ssh in the filter bar and start a new capture.
 <br/><br/>
-
+In PowerShell, establish an SSH connection to linux-vm with ssh username@10.0.0.5 (substitute username with linux-vm’s username). Type yes to accept the connection prompt, then enter the password (the input field remains blank during entry).
+<br/><br/>
+Wireshark displays encrypted SSH packets, confirming a secure connection between VMs.
+<br/><br/>
+In PowerShell, type exit to terminate the session, observing the “Connection to 10.0.0.5 closed” message.</p>
+<br/><br/>
 
 
 <p><img width="850" alt="image" src=""/></p>
