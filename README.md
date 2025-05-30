@@ -222,14 +222,15 @@ In Azure, revisit the NSG's **Inbound security rules**, select the new rule, and
 3. Alternatively, filter with `rdp` to view similar traffic, verifying the protocol's continuous network activity during remote access
 
 **Observation**: DNS traffic illustrates domain-to-IP resolution, while RDP traffic highlights the persistent network activity of remote connections, evident since the session's start.
-
----
-
 <br/><br/>
+
+<img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%">
+
+<br/>
 
 <div align="center"> <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTVlM2J0cDBrcThwOTR3cm45bndrYWNycDNneWVuNDIzeGM0ZDB4ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jir4LEGA68A9y/giphy.gif" width="75%"> </div>
 
-<br/><br/>
+<br/>
 
 <img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%">
 
@@ -245,9 +246,7 @@ This procedure successfully connected to **Windows-VM** via RDP using mstsc, ins
 
 This exercise underscores the capabilities of network analysis tools and Azure's security infrastructure. To manage costs, stop both VMs in Azure when idle. This concludes the procedure, equipping you with essential skills for network monitoring and security configuration.
 
-<img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%">
-
-<br/><br/>
+---
 
 <div align="center">
 
